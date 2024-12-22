@@ -1,0 +1,147 @@
+1. Program to print "Hello World"
+kotlin
+Copy code
+fun main() {
+    println("Hello World")
+}
+// Output: Hello World
+2. Program to calculate the sum of two numbers
+kotlin
+Copy code
+fun main() {
+    val num1 = readLine()!!.toFloat()
+    val num2 = readLine()!!.toFloat()
+
+    val sum = num1 + num2
+    println("The sum of $num1 and $num2 is: $sum")
+}
+// Output (example): The sum of 5.0 and 3.0 is: 8.0
+3. Program to calculate simple interest
+kotlin
+Copy code
+fun main() {
+    val principal = readLine()!!.toFloat()
+    val rate = readLine()!!.toFloat()
+    val time = readLine()!!.toFloat()
+
+    val simpleInterest = (principal * rate * time) / 100
+    println("The Simple Interest is: $simpleInterest")
+}
+// Output (example): The Simple Interest is: 100.0
+4. Program to check whether a student is pass or fail
+kotlin
+Copy code
+fun main() {
+    val marks = readLine()!!.toFloat()
+
+    if (marks >= 40) {
+        println("The student is PASS")
+    } else {
+        println("The student is FAIL")
+    }
+}
+// Output (example): The student is PASS
+5. Program to display student's result (distinction, first class, second class, pass class, fail)
+kotlin
+Copy code
+fun main() {
+    val marks = readLine()!!.toFloat()
+
+    when {
+        marks >= 75 -> println("Distinction")
+        marks >= 60 -> println("First Class")
+        marks >= 50 -> println("Second Class")
+        marks >= 40 -> println("Pass Class")
+        else -> println("Fail")
+    }
+}
+// Output (example): First Class
+6. Program to check if a given year is a leap year or not
+kotlin
+Copy code
+fun main() {
+    val year = readLine()!!.toInt()
+
+    if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0)) {
+        println("$year is a Leap Year")
+    } else {
+        println("$year is not a Leap Year")
+    }
+}
+// Output (example): 2024 is a Leap Year
+7. Program to check if a given number is positive or negative
+kotlin
+Copy code
+fun main() {
+    val num = readLine()!!.toFloat()
+
+    if (num > 0) {
+        println("The number is Positive")
+    } else if (num < 0) {
+        println("The number is Negative")
+    } else {
+        println("The number is Zero")
+    }
+}
+// Output (example): The number is Positive
+8. Program to print 1 to 10 using for loop
+kotlin
+Copy code
+fun main() {
+    for (i in 1..10) {
+        println(i)
+    }
+}
+// Output:
+// 1
+// 2
+// 3
+// 4
+// 5
+// 6
+// 7
+// 8
+// 9
+// 10
+9. Program to print 1 to 10 using while loop
+kotlin
+Copy code
+fun main() {
+    var i = 1
+    while (i <= 10) {
+        println(i)
+        i++
+    }
+}
+// Output:
+// 1
+// 2
+// 3
+// 4
+// 5
+// 6
+// 7
+// 8
+// 9
+// 10
+10. Program to print 1 to 10 using do-while loop
+kotlin
+Copy code
+fun main() {
+    var i = 1
+    do {
+        println(i)
+        i++
+    } while (i <= 10)
+}
+// Output:
+// 1
+// 2
+// 3
+// 4
+// 5
+// 6
+// 7
+// 8
+// 9
+// 10
