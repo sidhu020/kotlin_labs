@@ -1,0 +1,233 @@
+11. Program to calculate addition, subtraction, multiplication, and division using functions
+kotlin
+Copy code
+// Function to add two numbers
+fun add(a: Float, b: Float): Float {
+    return a + b
+}
+
+// Function to subtract two numbers
+fun subtract(a: Float, b: Float): Float {
+    return a - b
+}
+
+// Function to multiply two numbers
+fun multiply(a: Float, b: Float): Float {
+    return a * b
+}
+
+// Function to divide two numbers
+fun divide(a: Float, b: Float): Float {
+    return if (b != 0f) a / b else Float.NaN
+}
+
+fun main() {
+    val num1 = 10f
+    val num2 = 5f
+
+    println("Addition: ${add(num1, num2)}")
+    println("Subtraction: ${subtract(num1, num2)}")
+    println("Multiplication: ${multiply(num1, num2)}")
+    println("Division: ${divide(num1, num2)}")
+}
+// Output:
+// Addition: 15.0
+// Subtraction: 5.0
+// Multiplication: 50.0
+// Division: 2.0
+12. Program to calculate simple interest using a function
+kotlin
+Copy code
+// Function to calculate simple interest
+fun calculateSimpleInterest(principal: Float, rate: Float, time: Float): Float {
+    return (principal * rate * time) / 100
+}
+
+fun main() {
+    val principal = 1000f
+    val rate = 5f
+    val time = 2f
+    println("Simple Interest: ${calculateSimpleInterest(principal, rate, time)}")
+}
+// Output: Simple Interest: 100.0
+13. Program to calculate the area of a circle using a function
+kotlin
+Copy code
+// Function to calculate area of a circle
+fun areaOfCircle(radius: Float): Float {
+    return 3.14f * radius * radius
+}
+
+fun main() {
+    val radius = 5f
+    println("Area of Circle: ${areaOfCircle(radius)}")
+}
+// Output: Area of Circle: 78.5
+14. Program to convert Rupees to Dollars using a function
+kotlin
+Copy code
+// Function to convert Rupees to Dollars
+fun rupeesToDollars(rupees: Float, exchangeRate: Float): Float {
+    return rupees / exchangeRate
+}
+
+fun main() {
+    val rupees = 1000f
+    val exchangeRate = 75f // 1 USD = 75 Rupees
+    println("Amount in Dollars: ${rupeesToDollars(rupees, exchangeRate)}")
+}
+// Output: Amount in Dollars: 13.333333
+15. Program to find the factorial of a given number using recursion
+kotlin
+Copy code
+// Function to calculate factorial using recursion
+fun factorial(n: Int): Int {
+    return if (n == 0 || n == 1) 1 else n * factorial(n - 1)
+}
+
+fun main() {
+    val number = 5
+    println("Factorial of $number is: ${factorial(number)}")
+}
+// Output: Factorial of 5 is: 120
+16. Program to calculate average using arrays
+kotlin
+Copy code
+// Function to calculate the average of an array of numbers
+fun calculateAverage(arr: IntArray): Double {
+    return arr.average()
+}
+
+fun main() {
+    val numbers = intArrayOf(10, 20, 30, 40, 50)
+    println("Average: ${calculateAverage(numbers)}")
+}
+// Output: Average: 30.0
+17. Program to find the largest element in an array
+kotlin
+Copy code
+// Function to find the largest element in an array
+fun findLargest(arr: IntArray): Int {
+    return arr.maxOrNull() ?: Int.MIN_VALUE
+}
+
+fun main() {
+    val numbers = intArrayOf(10, 20, 30, 40, 50)
+    println("Largest element: ${findLargest(numbers)}")
+}
+// Output: Largest element: 50
+18. Program to print an array
+kotlin
+Copy code
+// Function to print elements of an array
+fun printArray(arr: IntArray) {
+    for (element in arr) {
+        println(element)
+    }
+}
+
+fun main() {
+    val numbers = intArrayOf(1, 2, 3, 4, 5)
+    printArray(numbers)
+}
+// Output:
+// 1
+// 2
+// 3
+// 4
+// 5
+19. Program to concatenate two arrays
+kotlin
+Copy code
+// Function to concatenate two arrays
+fun concatenateArrays(arr1: IntArray, arr2: IntArray): IntArray {
+    return arr1 + arr2
+}
+
+fun main() {
+    val arr1 = intArrayOf(1, 2, 3)
+    val arr2 = intArrayOf(4, 5, 6)
+    val result = concatenateArrays(arr1, arr2)
+    println("Concatenated Array: ${result.joinToString(", ")}")
+}
+// Output: Concatenated Array: 1, 2, 3, 4, 5, 6
+20. Program to check if an array contains a given value
+kotlin
+Copy code
+// Function to check if an array contains a given value
+fun containsValue(arr: IntArray, value: Int): Boolean {
+    return arr.contains(value)
+}
+
+fun main() {
+    val numbers = intArrayOf(1, 2, 3, 4, 5)
+    val value = 3
+    println("Contains $value: ${containsValue(numbers, value)}")
+}
+// Output: Contains 3: true
+21. Program to join two lists
+kotlin
+Copy code
+// Function to join two lists
+fun joinLists(list1: List<Int>, list2: List<Int>): List<Int> {
+    return list1 + list2
+}
+
+fun main() {
+    val list1 = listOf(1, 2, 3)
+    val list2 = listOf(4, 5, 6)
+    val result = joinLists(list1, list2)
+    println("Joined List: $result")
+}
+// Output: Joined List: [1, 2, 3, 4, 5, 6]
+22. Program to convert List (ArrayList) to Array and vice-versa
+kotlin
+Copy code
+// Function to convert List to Array
+fun listToArray(list: List<Int>): Array<Int> {
+    return list.toArray(Array<Int>::new)
+}
+
+// Function to convert Array to List
+fun arrayToList(arr: Array<Int>): List<Int> {
+    return arr.toList()
+}
+
+fun main() {
+    val list = listOf(1, 2, 3, 4)
+    val array = list.toTypedArray()
+
+    println("Array from List: ${array.joinToString(", ")}")
+    println("List from Array: ${arrayToList(array).joinToString(", ")}")
+}
+// Output:
+// Array from List: 1, 2, 3, 4
+// List from Array: 1, 2, 3, 4
+23. Program to convert Map (HashMap) to List
+kotlin
+Copy code
+// Function to convert Map to List of pairs
+fun mapToList(map: Map<String, Int>): List<Pair<String, Int>> {
+    return map.toList()
+}
+
+fun main() {
+    val map = mapOf("One" to 1, "Two" to 2, "Three" to 3)
+    val result = mapToList(map)
+    println("List from Map: $result")
+}
+// Output: List from Map: [(One, 1), (Two, 2), (Three, 3)]
+24. Program to sort a Map by values
+kotlin
+Copy code
+// Function to sort a Map by values
+fun sortMapByValues(map: Map<String, Int>): List<Map.Entry<String, Int>> {
+    return map.entries.sortedBy { it.value }
+}
+
+fun main() {
+    val map = mapOf("One" to 10, "Two" to 5, "Three" to 8)
+    val sortedMap = sortMapByValues(map)
+    println("Sorted Map by Values: $sortedMap")
+}
+// Output: Sorted Map by Values: [Two=5, Three=8, One=10]
