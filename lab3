@@ -1,0 +1,150 @@
+Problem 25: Define a class called Cone and find its area and volume
+kotlin
+Copy code
+import kotlin.math.PI
+import kotlin.math.sqrt
+
+class Cone(private val radius: Double, private val height: Double) {
+    fun volume(): Double {
+        return (1.0 / 3.0) * PI * radius * radius * height
+    }
+
+    fun area(): Double {
+        return PI * radius * sqrt(radius * radius + height * height)
+    }
+}
+
+fun main() {
+    val cone = Cone(3.0, 5.0)
+    println("Volume of the Cone: ${cone.volume()}")
+    println("Surface Area of the Cone: ${cone.area()}")
+}
+Problem 26: Define a Room class with attributes length, breadth, and area. Define a suitable constructor and method to display the details of Room.
+kotlin
+Copy code
+class Room(private val length: Double, private val breadth: Double) {
+    val area: Double = length * breadth
+
+    fun displayDetails() {
+        println("Room Length: $length")
+        println("Room Breadth: $breadth")
+        println("Room Area: $area")
+    }
+}
+
+fun main() {
+    val room = Room(5.0, 4.0)
+    room.displayDetails()
+}
+Problem 27: Employee class with employee details, HRA, DA, and total pay calculation
+kotlin
+Copy code
+class Employee(private val code: Int, private val name: String, private val designation: String, private val basicPay: Double) {
+    private val HRA: Double = basicPay * 0.10
+    private val DA: Double = basicPay * 0.45
+    private val totalPay: Double = basicPay + HRA + DA
+
+    fun displayDetails() {
+        println("Employee Code: $code")
+        println("Employee Name: $name")
+        println("Employee Designation: $designation")
+        println("Basic Pay: $basicPay")
+        println("HRA: $HRA")
+        println("DA: $DA")
+        println("Total Pay: $totalPay")
+    }
+}
+
+fun main() {
+    val employee = Employee(101, "John Doe", "Software Engineer", 50000.0)
+    employee.displayDetails()
+}
+Problem 28: Tree class with attributes and methods, derived Mango class
+kotlin
+Copy code
+open class Tree(private val treeCode: Int, private var height: Double, private var width: Double) {
+    private var amountSpent: Double = 0.0
+
+    open fun annualUpdate() {
+        height += 1.0
+        width += 0.5
+        amountSpent += 1000.0
+    }
+
+    open fun display() {
+        println("Tree Code: $treeCode")
+        println("Height: $height")
+        println("Width: $width")
+        println("Amount Spent: $amountSpent")
+    }
+}
+
+class Mango(treeCode: Int, height: Double, width: Double, private var yield: Double) : Tree(treeCode, height, width) {
+    override fun annualUpdate() {
+        super.annualUpdate()
+        yield += 10.0 // Increase yield by 10 each year
+    }
+
+    override fun display() {
+        super.display()
+        println("Mango Yield: $yield")
+    }
+}
+
+fun main() {
+    val mangoTree = Mango(1, 5.0, 3.0, 50.0)
+    mangoTree.annualUpdate()
+    mangoTree.display()
+}
+Problem 29: Calculate simple Interest and compound Interest using an abstract class
+kotlin
+Copy code
+abstract class InterestCalculator {
+    abstract fun calculateInterest(): Double
+}
+
+class SimpleInterest(private val principal: Double, private val rate: Double, private val time: Double) : InterestCalculator() {
+    override fun calculateInterest(): Double {
+        return (principal * rate * time) / 100
+    }
+}
+
+class CompoundInterest(private val principal: Double, private val rate: Double, private val time: Double) : InterestCalculator() {
+    override fun calculateInterest(): Double {
+        return principal * (Math.pow(1 + rate / 100, time) - 1)
+    }
+}
+
+fun main() {
+    val simpleInterest = SimpleInterest(1000.0, 5.0, 2.0)
+    val compoundInterest = CompoundInterest(1000.0, 5.0, 2.0)
+
+    println("Simple Interest: ${simpleInterest.calculateInterest()}")
+    println("Compound Interest: ${compoundInterest.calculateInterest()}")
+}
+Problem 30: Calculate simple Interest and compound Interest using Interface
+kotlin
+Copy code
+interface InterestCalculator {
+    fun calculateInterest(): Double
+}
+
+class SimpleInterest(private val principal: Double, private val rate: Double, private val time: Double) : InterestCalculator {
+    override fun calculateInterest(): Double {
+        return (principal * rate * time) / 100
+    }
+}
+
+class CompoundInterest(private val principal: Double, private val rate: Double, private val time: Double) : InterestCalculator {
+    override fun calculateInterest(): Double {
+        return principal * (Math.pow(1 + rate / 100, time) - 1)
+    }
+}
+
+fun main() {
+    val simpleInterest: InterestCalculator = SimpleInterest(1000.0, 5.0, 2.0)
+    val compoundInterest: InterestCalculator = CompoundInterest(1000.0, 5.0, 2.0)
+
+    println("Simple Interest: ${simpleInterest.calculateInterest()}")
+    println("Compound Interest: ${compoundInterest.calculateInterest()}")
+}
